@@ -7,23 +7,13 @@ use Illuminate\Http\Request;
 
 class MaladieController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
+        //$data = Maladie::join('doctor', 'doctor.id', '=', 'id.id');
         $maladies = Maladie::all();
         return $maladies->toJson(JSON_PRETTY_PRINT);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
@@ -40,7 +30,6 @@ class MaladieController extends Controller
         //
     }
 
-   
     /**
      * Update the specified resource in storage.
      *

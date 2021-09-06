@@ -10,6 +10,10 @@ class Doctors extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nom', 'postnom', 'prenom', 'specialte','adress','contact'
+        'nom', 'postnom', 'prenom', 'specialte', 'adress', 'contact',
     ];
+/*
+public function Maladie(){
+    return $this->hasMany(Maladie::class);
+}*/
 }

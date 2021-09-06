@@ -30,6 +30,7 @@ class MaladiesController extends Controller
         $maladie->type = $request->type;
         $maladie->symptomes = $request->symptomes;
         $maladie->description = $request->description;
+        $maladie->prevention = $request->prevention;
         $maladie->save();
         return response()->json($maladie);
     }
@@ -52,8 +53,9 @@ class MaladiesController extends Controller
         $maladie->type = $request->type;
         $maladie->symptomes = $request->symptomes;
         $maladie->description = $request->description;
+        $maladie->prevention = $request->prevention;
         $maladie->save();
-        return response()->json($maladie);
+        return response()->json($maladie); 
     }
 
     public function destroy($id)

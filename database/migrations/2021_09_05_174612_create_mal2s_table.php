@@ -4,34 +4,24 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Maladies extends Migration
+class CreateMal2sTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('maladies', function (Blueprint $table) {
+        Schema::create('mal2s', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
             $table->string('type');
             $table->text('symptomes');
             $table->text('description');
             $table->timestamps();
-            $table->unsignedBigInteger('id');
-            $table->foreign('id')->references('id')->on('doctors');
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')->references('id')->on('doctors');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('maladies');
+        Schema::dropIfExists('mal2s');
     }
 }
